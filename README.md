@@ -35,17 +35,48 @@ def isHappy(n):
 > ```bash
 > docker exec ossp_container cat /etc/os-release
 > ```
+> ```bash
+> # 실행 결과
+> PRETTY_NAME="Ubuntu 24.04.1 LTS"
+> NAME="Ubuntu"
+> VERSION_ID="24.04"
+> VERSION="24.04.1 LTS (Noble Numbat)"
+> VERSION_CODENAME=noble
+> ID=ubuntu
+> ID_LIKE=debian
+> HOME_URL="https://www.ubuntu.com/"
+> SUPPORT_URL="https://help.ubuntu.com/"
+> BUG_REPORT_URL="https://bugs.launchpad.net/ubuntu/"
+> PRIVACY_POLICY_URL="https://www.ubuntu.com/legal/terms-and-policies/privacy-policy"
+> UBUNTU_CODENAME=noble
+> LOGO=ubuntu-logo
+> ```
 > - `docker exec <container_name> <command>` 명령어는 컨테이너 외부에서 컨테이너에 쉘 명령어를 입력할 수 있도록 해주는 명령어입니다.
 > - `cat /etc/os-release`는 해당 컨테이너의 OS 버전을 출력합니다.
+
 > ```bash
 > docker exec ossp_container git --version
 > ```
+> ```bash
+> # 실행 결과
+> git version 2.43.0
+> ```
 > - `git --version`은 설치되어 있는 git의 버전을 출력합니다.
+
 > ```bash
 > docker exec ossp_container python3 --version
 > ```
+> ```bash
+> #실행 결과
+> Python 3.12.3
+> ```
 > - `python3 --version`은 설치되어 있는 python3의 버전을 출력합니다.
+
 > ```bash
 > docker inspect --format="{{ .HostConfig.Binds }}" ossp_container
+> ```
+> ```bash
+> # 실행 결과
+> [/home/cvezeroday/programming/ossp:/mnt/ossp_container_dir]
 > ```
 > - `docker inspect --format="{{ .HostConfig.Binds }}" <container_name>` 명령어는 mount된 디렉토리를 출력하는 명령어입니다.
